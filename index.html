@@ -36,6 +36,9 @@
 					
 					by Mark Koester <br />
 					www.markwk.com | github.com/markwk
+					<br />
+					<br />
+					<small>Slides: [https://rawgit.com/markwk/building-photostats.io-presentation/master/index.html](https://rawgit.com/markwk/building-photostats.io-presentation/master/index.html)</small>
 					</textarea>
 				</section>
 
@@ -64,10 +67,39 @@
 					
 					## Slides: 
 					
-[https://rawgit.com/markwk/building-podcasttracker.com-presentation/master/index.html](https://rawgit.com/markwk/building-podcasttracker.com-presentation/master/index.html)
+[https://rawgit.com/markwk/building-photostats.io-presentation/master/index.html](https://rawgit.com/markwk/building-photostats.io-presentation/master/index.html)
 					
 					</textarea>
 				</section>
+
+				<section id="fragments" data-background="https://media.giphy.com/media/tLqOJRWCkJ1EQ/giphy.gif">
+				<h1 class="fragment">475</h1>
+				<h2 class="fragment">or 1.3 photos per day</h2>
+				<br />
+				<h4>estimated number of photos that was taken by every smart phone user in 2017.</h4>
+				</section>
+
+				<section>
+				<img data-src="slide-images/photostats-explorting-photo-data-cover.jpg">
+				</section>	
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Outline
+						
+						* INTRO: Self-Tracking & Quantified Self
+						* What is Photo Metadata? 
+						* IDEA: An App to Aggregate and Track My Photo Metadata
+						* What is React Native?  
+						* DEMO: Initial Prototype using CameraAPI
+						* UI / Theming with Native Base
+						* Data Models
+						* Pro's and Con's of React Native
+						* What I've Learned? 
+						
+					</textarea>
+				</section>	
 
 				<section data-markdown>
 					<textarea data-template>
@@ -84,20 +116,6 @@
 						<h2>... and an obsessive tracker!</h2>
 				</section>	
 
-				<section data-markdown>
-					<textarea data-template>
-
-						## Outline
-						
-						* INTRO: Self-Tracking & Quantified Self
-						* Another Data Point: Your Photo Metadata 
-						* 
-						* 
-						* What I've Learned? 
-						
-					</textarea>
-				</section>		
-										
 				<section id="fragments">
 				
 				<h2>Quantified Self: What is it?</h2>
@@ -105,10 +123,39 @@
 				<p class="fragment fade-left">Measuring or documenting something about your self such that it gains meaning.</p>
 				
 				</section>
+
+				<section>
+				I track a lot of aspects of my life. 
+				</section>
+										
 				<section>
 					<section data-background="https://media.giphy.com/media/l3mZnuz4coJp8EBBm/giphy.gif">
 						<h2>What Do I Track...?</h2>
 					</section>
+
+					<section data-markdown>
+					<textarea data-template>
+
+					## Time & Productivity			
+					
+					* Computing Time (RescueTime)
+					* Project Time (Toggl)
+					* Mobile Screen Time (Moment app)
+					* Tasks (Todoist)
+					* Habits and Goals (via Streaks, Habitica, Productive)
+					* Creative Written Words (Mac Word Counter app)
+
+					</textarea>
+					</section>
+					
+					<section>
+							<img data-src="slide-images/2017-A-Year-in-Computer-Time.png" width=500>
+					</section>
+					
+					<section>
+							<img data-src="slide-images/2017-Year-in-Tasks-infographic.png" width=500>
+					</section>
+
 					<section data-markdown>
 					<textarea data-template>
 
@@ -126,28 +173,10 @@
 					
 					</textarea>
 					</section>
-					<section data-markdown>
-					<textarea data-template>
 
-					## Time & Productivity			
-					
-					* Computing Time (RescueTime)
-					* Project Time (Toggl)
-					* Mobile Screen Time (Moment app)
-					* Tasks (Todoist)
-					* Habits and Goals (via Streaks, Habitica, Productive)
-					* Creative Written Words (Mac Word Counter app)
-
-					</textarea>
-					</section>
-					
 					<section>
-							<img data-src="slide-images/2017-A-Year-in-Computer-Time.png">
-					</section>
-					
-					<section>
-							<img data-src="slide-images/2017-Year-in-Tasks-infographic.png">
-					</section>
+							<img data-src="slide-images/2017-step-count.jpg" width=600>
+					</section>					
 					
 					<section data-markdown>
 					<textarea data-template>
@@ -194,12 +223,60 @@
 				
 				</section>										
 
+
 				<section id="fragments">
 						
-						<h4>Another Data Point to Track</h4>
+						<h4>Opportunities in the Tracking and Data Space</h4>
 						
-						<span class="fragment"><h1>Photo Meta Data</h1>
+						<ul>
+							<li class="fragment">Deriving insight and meaning from existing data</li>
+							<li class="fragment">Enabling and tracking new data points.</li>
+						</ul>
 
+				</section>
+				
+				<section id="fragments">
+						
+						<h4>A Data Point to Track and Find Insight</h4>
+						
+						<span class="fragment"><h1>Your Photo Data</h1>
+
+				</section>
+
+				<section id="fragments">
+						
+						<h2>What is Photo Metadata?</h2>
+						
+						<p class="fragment">Image metadata is text information pertaining to an image file that is embedded into the file or contained in a separate file that is associated with it.</p>
+						<p class="fragment">Image metadata includes details relevant to the image itself as well as information about its production. This data is generated by the device capturing the image (i.e. the camera).</p>
+						<p class="fragment"><strong>Metadata puts photos in context.</strong></p>
+
+				</section>
+				
+				<section>
+						
+						<h2>Examples of Metadata on Photos</h2>
+						<ul>
+						<li>Locational (gps, altitude, etc.)</li>
+						<li>Date & Time (creation, modification)</li>
+						<li>Camera Type</li>
+						<li>EXIF Data about focus, aperture, etc.</li>
+						</ul>
+
+				</section>
+
+				<section>How to get your photo metadata?</section>
+
+				<section>
+						<h2>PhotoStats.io</h2>
+						<img data-src="slide-images/photostats-site.png">
+						
+				</section>
+
+				<section>
+						
+						<h2>Photo Data Tracking App</h2>
+						<p>The photos on your mobile phone are one of the richest collections of data you have on yourself. If you regularly take photos with your phone (which most of us do), then your phone is collecting data on you.</p>
 				</section>
 				
 				<section>
@@ -208,30 +285,397 @@
 					<ol>
 						<li>Access Photo Library on Phone</li> 
 						<li>Extract Meta Data, like gps, EXIF, etc.</li> 
-						<li>Export to CSV / JSON</li> 
+						<li>Export the data (CSV or JSON)</li> 
 					</ol>
 				</section>
 
+				<section>What is React Native?</section>
+				
+				<section>
+				<ul>
+				<li>React Native is a framework to build native mobile apps using React and Javascript.</li>
+				<li>With React Native, you don't build a "mobile web app", an "HTML5 app", or a "hybrid app". It's indistinguishable from an app built using Objective-C or Java. React Native uses the same fundamental UI building blocks as regular iOS and Android apps.</li>
+				<li>React and React Native are maintained by Facebook, Instagram and a community of developers.</li>
+				</ul>  
+				</section>
+				<section>
+				<h4>How Does React Native Work (vs. React)?</h4>
+				<img data-src="slide-images/how-does-react-native-work.png">
+				<small>Source: http://www.discoversdk.com/blog/how-react-native-works</small>
+				</section>
+				
+				<section>
+				<h4>React's Rendering Lifecycle</h4>
+				<img data-src="slide-images/react-works01.png">
+				<img data-src="slide-images/react-works02.png">
+				<small>Source: http://www.discoversdk.com/blog/how-react-native-works</small>
+				</section>
+
+				<section>
+				<ul>		
+				<li>React renders to and manipulates the browser’s DOM.</li>
+				<li>React Native is not rendering web-based views.</li> 
+				<li>In contrast, React Native invokes Objective-C APIs to render to iOS components, or Java APIs to render to Android components. </li>
+				</ul>
+				</section>
+				
+				<section>
+				<h4>React Native Views</h4>
+				<img data-src="slide-images/react-native-views.png" width=400>
+				</section>
+
+				<section>
+				<h4>Getting Started...</h4>
+				<img data-src="slide-images/rn-getting-started.png" width="600">
+				<small>https://facebook.github.io/react-native/docs/getting-started.html</small>
+				</section>
+
+				<section>
+					<h4>"Weekend Project":</h4>
+					<h2>Initial Feature List</h2>
+					<ol>
+						<li>Access Photo Library on Phone</li> 
+						<li>Extract Meta Data, like gps, EXIF, etc.</li> 
+						<li>Export the data (CSV or JSON)</li> 
+					</ol>
+				</section>				
+
+				<section>
+				<h2>Demo: Code Structure</h2>
+				<img data-src="slide-images/demo-code-structure.png">
+				</section>
+
+				<section>
+					<h4>index.ios.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+//index.ios.js for  start ios project
+import { AppRegistry } from 'react-native';
+import app from './app';
+
+AppRegistry.registerComponent('rncameraroll', app);
+					</code></pre>
+				</section>
+
+				<section>
+				<h4>Key API: CameraRoll</h4>
+				<p>CameraRoll provides access to the local camera roll / gallery.</p> 
+				<p>Key Method: getPhotos()</p>
+				<small>https://facebook.github.io/react-native/docs/cameraroll.html</small>
+				</section>
+
+				<section>
+					<h4>app.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+import React from 'react';
+import { StackNavigator } from 'react-navigation'
+
+import ImageBrowser from './ImageBrowser'
+import ImageList from './ImageList'
+
+const Navigation = StackNavigator({
+    ImageList: { screen: ImageList },
+    ImageBrowser: { screen: ImageBrowser },
+});
+
+function setup() {
+    return Navigation;
+}
+
+export default setup;
+					</code></pre>
+				</section>
+
+				<section>
+					<h4>ImageList.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+//imagelist.js for date  list of photo on phone.
+
+import React from 'react'
+
+import {     //import component
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    Button,
+    CameraRoll,
+    Image,
+    Dimensions,
+    ScrollView,
+    ActivityIndicator,
+    Platform
+} from 'react-native'
+
+import App from './app'
+import Utils from './utils'
+
+const { width, height } = Dimensions.get('window')
+					</code></pre>
+				</section>
+
+				<section>
+					<h4>ImageList.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+export default class ImageList extends React.Component {
+
+    static navigationOptions = {
+        title: 'Gallery',
+    };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            dates: [],
+            photos: [],
+            loading: true
+        }
+    }
+
+    componentDidMount() {
+        this.getPhotos();
+    }
+					</code></pre>
+				</section>
+
+				<section>
+					<h4>ImageList.js</h4>				
+					<pre><code class="hljs" data-trim contenteditable>
+    getPhotos = () => {      //function  getPhotos    get photo from phone
+        CameraRoll.getPhotos({
+            first: Platform.OS === 'android' ? 999 : -1,
+            assetType: 'All',
+            // groupTypes: 'All'
+        })
+            .then(r => {
+                this.setState({ photos: r.edges });
+                r.edges.forEach(data => {
+                    let dates = Utils.clone(this.state.dates);
+                    let newTimestamp = data.node.timestamp;
+                    let isDateExists = false;
+                    if (dates.length) {
+                        for (i = 0; i < dates.length; i++) {
+                            let date = dates[i];
+                            if (Utils.isSameDate(new Date(date.timestamp * 1000), new Date(newTimestamp * 1000))) {
+                                date.count++;
+                                isDateExists = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!isDateExists) {
+                        dates.push({
+                            timestamp: newTimestamp,
+                            count: 1
+                        })
+                    }
+                    this.setState({ dates: dates, loading: false });
+                });
+            });
+    };
+					</code></pre>
+				</section>
+				
+				<section id="fragments">
+					<h4>Post-"Weekend Project":</h4>
+					<h2>Feature List</h2>
+					<ol>
+						<li><strike class="fragment">Access Photo Library on Phone</strike></li> 
+						<li>Extract Meta Data, like gps, EXIF, etc. <span class="fragment" style="color:red">=> Library?</span></li> 
+						<li>Export the data (CSV or JSON) <span class="fragment" style="color:red">=> Data Model?</span></li> 
+						<li class="fragment" style="color:green">Better Structure</li>
+						<li class="fragment" style="color:green">Improved UI and Design</li>
+					</ol>
+				</section>	
+			
+				<section>
+				<h4>Improved Starting Position: Native Base</h4>
+				<img data-src="slide-images/nativebase.png">
+				<p><small>https://nativebase.io</small></p>
+				</section>
+
+				<section>
+				<h4>Cheating?</h4>
+				<h2>React Native "Theme"</h2>
+				<img data-src="slide-images/rn-theme.png">
+				<small>https://nativebase.io</small>
+				</section>
+
+				<section>
+				<h2>Revised Code Structure</h2>
+				<img data-src="slide-images/code-structure.png">
+				</section>
+
+				<section>
+				<h2>Screens to Start With</h2>
+				<img data-src="slide-images/rn-screens.png">
+				</section>
+
+				<section>
+				<h2>Library to Extract EXIF Data</h2>		<small>https://github.com/francisco-sanchez-molina/react-native-exif</small>
+				</section>
+
+				<section>
+				<h4>Data Management, Storage and Models in React Native</h4>
+				</section>
+
+				<section data-background="https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif">
+				<span style="color:red">Questions: Backend? No Backend? Persistent Storage? Data Model?</span>
+				</section>
+
+				<section>
+				Redux is an open-source JavaScript library designed for managing application state. It is primarily used together with React or Angular for building user interfaces. 
+				</section>
+
+				<section>
+				<h4>Data Modeling in React Native</h4>
+				<ul>
+					<li>/reducers/dateObject.js</li>
+					<li>/reducers/imageObject.js</li>
+				</ul>
+				</section>
+
+				<section>
+					<h4>/reducers/imageObject.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+// This method will generate a object structure for the image Object.
+import Utils from "./utils.js";
+import Exif from "react-native-exif";
+import { Platform } from "react-native";
+import { Crashlytics } from "react-native-fabric";
+
+const imageObject  = {
+      fetchObject(imageData) {
+            let cameraData = {
+             timestamp: imageData.timestamp,
+             groupName: imageData.group_name,
+             type: imageData.type,
+             location: imageData.location,
+             fileName: imageData.image.filename,
+             width: imageData.image.width,
+             height: imageData.image.height,
+             uri: imageData.image.uri,
+             isDeleted: false,
+             time: Utils.getStringTime(new Date(imageData.timestamp * 1000)),
+             date: Utils.getStringFromDate(new Date(imageData.timestamp * 1000)),
+            };
+
+          // alert(Utils.isExifDataDisable)
+
+          if(Utils.isExifDataDisable){
+              return new Promise((resolve, reject) => {
+                  resolve(cameraData);
+              });
+          }else{
+//adding the exif data in the image data fetched from CameraRoll
+            return new Promise((resolve, reject) => {
+                  Exif.getExif(imageData.image.uri)
+                      .then((data) =>{
+                            cameraData =   { ...cameraData, exifData:data };
+                            resolve(cameraData);
+
+                      })
+                      .catch((error) => {
+                            alert(error + " file: " + imageData.image.uri);
+                            Platform.OS === "android"
+                            // Record a non-fatal JS error
+                             ? Crashlytics.logException(error + " file: " + imageData.image.uri)
+                             : Crashlytics.recordError(error + " file: " + imageData.image.uri)
+                            // reject("Exif" + error);
+                            resolve(cameraData);
+                      });
+            });
+          }
+      },
+
+};
+module.exports = imageObject;
+
+</code></pre>
+</section>
+
+				<section>
+					<h4>/reducers/dateObject.js</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+// This method will generate a object structure for the date Object.
+const dateObject  = {
+    fetchObject(timeStamp,imagesArray,count) {
+     return {
+        timestamp: timeStamp,
+        images: imagesArray,
+        };
+    }
+};
+module.exports = dateObject;
+					
+</code></pre>
+</section>
+
+				<section>
+				<h4>Data Storage in React Native</h4>
+				<ul>
+					<li>Async Storage ("built-in" to React Native)</li>
+					<li>SQLite</li>
+					<li>Firebase</li>
+					<li>Realm</li>
+					<li>Backends like MongoDB, Couchbase</li>
+					<li>Redux Persist</li>
+				</ul>
+				</section>
+				
+				<section>
+				Redux Persist takes your redux state object and saves it to persisted storage. On app launch, it retrieves this persisted state and saves it back to redux.
+				</section>
+
+				<section>
+				<h4>How I Manage Data:</h4>
+				<p>No backend. Store locally. Model data for exporting and stats.</p>
+				</section>
+
+				<section>
+				<h2>PhotoStats.io</h2>
+				<img data-src="slide-images/photostats-screenshots01.png">
+				</section>
+
+				<section>
+				<h2>PhotoStats.io</h2>
+				<img data-src="slide-images/photostats-screenshots02.png">
+				</section>
+
 				<section data-markdown>
 					<textarea data-template>
 						
-						## Raw Export of My PhotoStats
+						## Exporting Data
 
+						library: react-native-fetch-blob
+						
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
 						
-						## Visualizing: My PhotoStats with Tableau
+						## Lessons Learned about React Native
+						
+						* React Native is a good entry point for web developers to get into mobile development. 
+						* RN Apps perform quite well, no lag...
+						* React Native makes theming and style changes quite easy. 
+						* Healthy community of code and libraries (see: JS.coach ) as well as tutorials and articles. 
+						* Not all open source code is created equal so it's best to stick with react native's core APIs where possible. 
+						* You can mix RN code and true "native" code. 
 
 					</textarea>
 				</section>
 
+				<section>
+				<img data-src="slide-images/photostats-explorting-photo-data-cover.jpg">
+				<p>Lessons? Next steps? Finding Insights from Photo Data?</p>
+				</section>	
+
 				<section data-markdown>
 					<textarea data-template>
 
-						## Q&A
+						## Q&A: www.photostats.io
 
 						* Email: mark@int3c.com						
 						* Personal Blog: [www.markwk.com](http://www.markwk.com)
@@ -247,7 +691,6 @@
 						<small>Builder for Web and Mobile, Dev, CTO, Technology Consultant</small>
 					</textarea>
 				</section>
-
 
 			</div>
 		</div>
