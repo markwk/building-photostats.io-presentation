@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>How I Built a Photo Tracking App with React Native</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<textarea data-template>
+					
+					PhotoStats.io: 
+					
+					## How I Built a Photo Tracking App with React Native
+					
+					<br/>
+					<br/>
+					
+					by Mark Koester <br />
+					www.markwk.com | github.com/markwk
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Where Can You Find Me? 
+						
+						* Email: mark@int3c.com
+						* Personal Blog: [www.markwk.com](http://www.markwk.com)
+						* Linkedin: [linkedin.com/in/markwkoester](https://www.linkedin.com/in/markwkoester) 
+						* Github: [markwk](https://github.com/markwk/)
+						* Professional Portfolio: [Int3c.com/portfolio](http://int3c.com/portfolio) 
+						* Twitter: [@markwkoester](https://twitter.com/markwkoester) 
+						
+						<br/>
+						
+						### <span style="color:red">Available for Hire:</span> 
+						
+						<small>Builder for Web and Mobile, Dev, CTO, Technology Consultant</small>
+					</textarea>
+				</section>
+
+				<section data-markdown data-background="https://media.giphy.com/media/sNz7ODDP6lsRy/giphy.gif">
+					<textarea data-template>
+					
+					## Slides: 
+					
+[https://rawgit.com/markwk/building-podcasttracker.com-presentation/master/index.html](https://rawgit.com/markwk/building-podcasttracker.com-presentation/master/index.html)
+					
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						
+						<img data-src="slide-images/mark-headshot-squared.jpg">
+
+						## I'm a digital documentarist.
+
+						I am [Mark Koester](https://twitter.com/markwkoester). I'm a tech entrepreneur, a [web developer](http://int3c.com) (mostly), a [writer](http://www.markwk.com) and...
+					</textarea>
+				</section>
+
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and an obsessive tracker!</h2>
+				</section>	
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Outline
+						
+						* INTRO: Self-Tracking & Quantified Self
+						* Another Data Point: Your Photo Metadata 
+						* 
+						* 
+						* What I've Learned? 
+						
+					</textarea>
+				</section>		
+										
+				<section id="fragments">
+				
+				<h2>Quantified Self: What is it?</h2>
+				
+				<p class="fragment fade-left">Measuring or documenting something about your self such that it gains meaning.</p>
+				
+				</section>
+				<section>
+					<section data-background="https://media.giphy.com/media/l3mZnuz4coJp8EBBm/giphy.gif">
+						<h2>What Do I Track...?</h2>
+					</section>
+					<section data-markdown>
+					<textarea data-template>
+
+					## Health & Fitness
+						
+					* Steps (Apple Watch)
+					* Blood Pressure
+					* Weight (digital scale and manual logging)
+					* Heart Rate & Heart Rate Variability 
+					* Running & Cycling (Strava)
+					* Sleep (AutoSleep app)
+					* Supplements and Medicine (RoundHealth)
+					* Strength Workouts (FitBod)
+					* Daily Standing
+					
+					</textarea>
+					</section>
+					<section data-markdown>
+					<textarea data-template>
+
+					## Time & Productivity			
+					
+					* Computing Time (RescueTime)
+					* Project Time (Toggl)
+					* Mobile Screen Time (Moment app)
+					* Tasks (Todoist)
+					* Habits and Goals (via Streaks, Habitica, Productive)
+					* Creative Written Words (Mac Word Counter app)
+
+					</textarea>
+					</section>
+					
+					<section>
+							<img data-src="slide-images/2017-A-Year-in-Computer-Time.png">
+					</section>
+					
+					<section>
+							<img data-src="slide-images/2017-Year-in-Tasks-infographic.png">
+					</section>
+					
+					<section data-markdown>
+					<textarea data-template>
+					
+					## Learning & Media Consumption
+			
+					* Books Read (GoodReads)
+					* Articles Read (Pocket, Evernote)
+					* TV and Movie Watching (Trakt.tv)
+					* Music (Last.fm)
+					* Podcast Listening with beta.PodcastTracker.com <- I Built This. 
+	
+					</textarea>
+					</section>
+
+					<section data-background="/slide-images/podcasttracker-example.png">
+					
+						<h2>
+												<a href="http://beta.podcasttracker.com"> Podcast Listening: Beta.PodcastTracker.com</a>
+						 </h2>
+					</section>
+					
+					<section>
+						<img data-src="slide-images/my-year-in-podcast-listening-cover.png">
+
+					</section>
+
+					<section data-markdown>
+					<textarea data-template>	
+
+					## Other Random Stuff
+					
+					* Money & Finances (Mint)
+					* Location (Moves app, Reporter App)
+									
+					</textarea>
+				</section>	
+				
+				<section data-background="https://media.giphy.com/media/l0EoBlDn63scoVSXC/giphy.gif">
+						<h2>Exploring and Visualizing My Data: Examples</h2>
+						
+						<p><a href="http://www.markwk.com/2018/01/year-in-data.html">A Year in Numbers: My Data From 2017</a></p>
+				</section>
+				
+				</section>										
+
+				<section id="fragments">
+						
+						<h4>Another Data Point to Track</h4>
+						
+						<span class="fragment"><h1>Photo Meta Data</h1>
+
+				</section>
+				
+				<section>
+					<h4>"Weekend Project":</h4>
+					<h2>Initial Feature List</h2>
+					<ol>
+						<li>Access Photo Library on Phone</li> 
+						<li>Extract Meta Data, like gps, EXIF, etc.</li> 
+						<li>Export to CSV / JSON</li> 
+					</ol>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						
+						## Raw Export of My PhotoStats
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						
+						## Visualizing: My PhotoStats with Tableau
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+
+						## Q&A
+
+						* Email: mark@int3c.com						
+						* Personal Blog: [www.markwk.com](http://www.markwk.com)
+						* Linkedin: [linkedin.com/in/markwkoester](https://www.linkedin.com/in/markwkoester) 
+						* Github: [markwk](https://github.com/markwk/)
+						* Professional Portfolio: [Int3c.com/portfolio](http://int3c.com/portfolio) 
+						* Twitter: [@markwkoester](https://twitter.com/markwkoester) 
+						
+						<br/>
+						
+						### <span style="color:red">Available for Hire:</span> 
+						
+						<small>Builder for Web and Mobile, Dev, CTO, Technology Consultant</small>
+					</textarea>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
